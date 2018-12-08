@@ -1,0 +1,47 @@
+body {
+    background:url('../images/bg_online_exam.jpg') no-repeat;
+    background-size: cover;
+    background-position: left center;
+}
+.card-bg{
+    height:570px;
+    //background: #11a99d;
+	background:#835fb0;
+}
+.login-footer {
+    text-align: center;
+    background: #614da4;
+    color: #fff;
+    height: 30px;
+}
+
+@media (max-width:599px) {
+  .card-bg{
+    height:auto;
+    background: none;
+  }
+  .content1 {
+    padding-top: 0vh;
+  }
+  .card{
+    margin:10px 0;
+  }
+}
+@media (min-width:600px) and (max-width:959px) {
+  .card-bg{
+    height:auto;
+    background: none;
+  }
+  .content1 {
+    padding-top: 15vh;
+  }
+}
+@media (min-width:960px) and (max-width:1279px) {
+  .card-bg{
+    height:auto;
+    background: none;
+  }
+  .content1 {
+    padding-top: 5vh;
+  }
+}

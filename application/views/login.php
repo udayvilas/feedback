@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<img src='<?php echo base_url(); ?>assets/images/da_care_logo.png' class="text-center center-block"  hide-xs hide-md hide-sm style="margin-bottom: 25px;">
 		<div  class="md-whiteframe-24dp" style="background:#fff;border-radius: 15px;">
 			<div class="card-header text-center"  data-background-color="blue" style="padding:18px;margin:-30px 25px 5px" hide-xs hide-md hide-sm>
-				<h4 style="text-transform: uppercase">{{submit_label}}</h4>
+				<h4 style="text-transform: uppercase">LOGIN</h4>
 			</div>
 
 			<div class="card-header text-center"  data-background-color="blue" hide-lg hide-xl style="margin-top: -50px;">

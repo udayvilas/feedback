@@ -11,15 +11,24 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider,$urlR
             }
         })
         .state('home', {
-            url: '/exam',
+            url: '/collection',
             views: {
-                '': {templateUrl: 'welcome/home',controller: 'mainCtrl'},
+                '': {templateUrl: 'welcome/home',controller: 'mainCtrl', abstract:true},
                 'header@home': {templateUrl: 'welcome/header'},
                 'sidebar@home': {templateUrl: 'welcome/sidebar'},
                 'main-content@home': {templateUrl: 'welcome/content',controller:'regCtrl'},
                 'footer@home': {templateUrl: 'welcome/footer'}
             }
         })
+
+        .state('fbvoice', {
+            parent: 'collection',
+            url: '/fbvoice',
+            views: {
+                'main-content@collection': {templateUrl: 'welcome/fbvoice', controller : 'regCtrl'}
+            }
+        })
+
 
         .state('results', {
             url: '/results',

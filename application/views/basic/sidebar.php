@@ -11,28 +11,35 @@
     <div class="sidebar-wrapper">
         <div class="user">
             <div class="photo"><img src="<?php echo base_url(); ?>assets/images/person-flat.png"></div>
-            <div class="info"><a>{{user_name}}</a></div>
+            <div class="info"><a>Uday</a></div>
         </div>
 
-        <ul class="nav nav-mobile-menu style-3" style="height:100%;overflow:auto;margin:0px" ng-if="user_role == 'N'" >
-            <li>
-                <a style="padding: 10px;background: #ef0a58;margin: 6px;font-size: 16px;"> Question Navigator </a>
-            </li>
-            <li style="float: left" ng-repeat="item in quest_list">
-                <a href="" ng-click="current_question($index)"><label ng-class="((exam_data[item.Q_ID] == undefined) ? 'label-box' : 'label-box1')"  >{{$index+1}} </label></a>
-            </li>
-            <!--<li style="float: left"><a><label class="label-box1">2</label></a></li>
-            <li style="float: left"><a><label class="label-box2">3</label></a></li>-->
-            <div class="clearfix"></div>
-            <li>
-                <a style="padding: 10px;background: #ef0a58;margin: 6px;font-size: 16px;"> Summary </a>
-            </li>
-            <li><a style="font-size: 19px;color: #FFC107;">Total Questions = {{quest_list.length}}</a></li>
-            <li><a style="font-size: 18px;color: #b2f961;">Answered Questions = {{exam_data | objLength}}</a></li>
-            <li><a style="font-size: 17px;color: #ff7b51;">Pending Questions = {{quest_list.length - (exam_data | objLength)}}</a></li>
 
-        </ul>
-        <ul class="nav nav-mobile-menu style-3" style="height:100%;overflow:auto;margin:0px" ng-if="user_role == 'Y'" >
+        <ul class="nav nav-mobile-menu style-3" style="height:100%;overflow:auto;margin:0px"  >
+            <!--
+            <li>
+                <a ng-class="{active1:isActive('/collection')}" style="padding: 10px;margin:13px;" ui-sref="collection" >
+                    <span class="sidebar-mini"> DS </span>
+                    <span class="sidebar-normal"> Daily Stats </span>
+                </a>
+            </li>
+            <li>
+                <a ng-class="{active1:isActive('/collection/fbvoice')}" style="padding: 10px;margin:13px;" ui-sref="fbvoice" >
+                    <span class="sidebar-mini"> VF </span>
+                    <span class="sidebar-normal"> Voice Feedback </span>
+                </a>
+            </li>
+
+            <li>
+                <a ng-class="{active1:isActive('/collection/fbvoice')}"
+                   style="padding: 10px;margin:13px;" ui-sref="fbvoice" style="padding: 10px;margin:13px;"><i class="material-icons">dashboard</i> Voice Feedback 2 </a>
+            </li>
+
+            -->
+            <li>
+                <a ng-class="{active1:isActive('/collection/fbvoice')}" style="padding: 10px;margin:13px;" ui-sref="fbvoice" style="padding: 10px;margin:13px;"> <i class="material-icons">dashboard</i> Feed one </a>
+            </li>
+
             <li>
                 <a ng-class="{active1:isActive('/results/dashboard')}" style="padding: 10px;margin:13px;" ui-sref="dashboard" style="padding: 10px;margin:13px;"> <i class="material-icons">dashboard</i> Dashboard </a>
             </li>

@@ -19,7 +19,7 @@ app.controller('reportCtrl',['$scope', '$state', '$timeout', '$http', '$rootScop
         {
             if (!$state.is("login"))
             {
-                $state.go('login');
+                //$state.go('login');
             }
         }
 

@@ -45,7 +45,7 @@ class Welcome extends CI_Controller {
 
 	public function content()
     {
-        $this->load->view('question_paper');
+        $this->load->view('collections/collection_count');
     }
 
 	public function reports()

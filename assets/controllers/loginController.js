@@ -11,16 +11,17 @@ app.controller('loginCtrl',['$scope', '$state', '$timeout', '$http', '$rootScope
     $scope.submit_label    = 'Signup';
 
     $log.log("i'm in login Controller");
-    $log.log("user_id "+$cookies.get('exam_user_id'));
+    $log.log("user_id "+$cookies.get('fb_user_id'));
 
-    if ($cookies.get('exam_user_id') == undefined || $cookies.get('exam_user_id') == "" || $cookies.get('exam_user_id') == null)
+    if ($cookies.get('fb_user_id') == undefined || $cookies.get('fb_user_id') == "" || $cookies.get('fb_user_id') == null)
     {
         if (!$state.is("login"))
         {
-            $state.go('login');
+            //$state.go('login');
         }
     }
     else {
+        /*
         var send = {action: "check_session_exists"};
         baseFactory.UserCtrl(send)
             .then(function (payload) {
@@ -38,7 +39,7 @@ app.controller('loginCtrl',['$scope', '$state', '$timeout', '$http', '$rootScope
                 },
                 function (errorPayload) {
                     $log.error('failure loading', errorPayload);
-                });
+                });*/
     }
 
     $scope.logout = function () {
@@ -89,8 +90,9 @@ app.controller('loginCtrl',['$scope', '$state', '$timeout', '$http', '$rootScope
     $scope.auth = {uname: '', gender: '', qualify: '', exp : '',email : '', user_id:'',pswd:'',qgroup:''};
     $scope.logincheck = function()
     {
-        $log.log("para "+$scope.submit_label+" \n new actions "+$scope.newaction);
 
+        $state.go('home');
+        return true;
         var send = $scope.auth;
         send.action = $scope.submit_label;
         $log.log("action "+send.action);
@@ -176,13 +178,10 @@ app.controller('loginCtrl',['$scope', '$state', '$timeout', '$http', '$rootScope
     $scope.login_app = function(keys,type,group_name)
     {
         if(type == 'set') {
-            $cookies.put('exam_user_name', keys.USER_NAME);
-            $cookies.put('exam_user_id', keys.USER_ID);
-            $cookies.put('exam_role', keys.IS_ADMIN);
-            $cookies.put('exam_group_name', group_name);
-            $cookies.put('exam_time','');
-            $cookies.put('exam_qgroup',keys.qgroup);
-            $cookies.put('exam_branch',keys.UNIT_ID);
+            $cookies.put('fb_user_name', keys.USER_NAME);
+            $cookies.put('fb_user_id', keys.USER_ID);
+            $cookies.put('fb_role', keys.IS_ADMIN);
+            $cookies.put('fb_branch',keys.UNIT_ID);
 
             $log.log(keys.IS_ADMIN);
             if(keys.IS_ADMIN == 'N')
